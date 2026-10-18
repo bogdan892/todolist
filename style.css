@@ -1,0 +1,91 @@
+.todo-container {
+  max-width: 650px;
+  min-width: 0;
+}
+
+#taskInput {
+  min-width: 0;
+  box-shadow: none;
+}
+
+#taskInput:focus {
+  background-color: #e9ecef;
+}
+
+.task-fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid #aaa;
+}
+
+.list-group-item {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr) repeat(2, minmax(0, 130px));
+  align-items: center;
+  gap: 10px;
+  min-height: 59px;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+}
+
+.status-todo {
+  background-color: #ff4545;
+  box-shadow: 0 0 8px #ff4545;
+}
+
+.status-done {
+  background-color: #28d17c;
+  box-shadow: 0 0 8px #28d17c;
+}
+
+.task-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.date {
+  min-width: 0;
+  color: #777;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.start-date,
+.end-date {
+  text-align: right;
+}
+
+@media (max-width: 480px) {
+  body {
+    align-items: flex-start !important;
+    padding: 10px !important;
+  }
+
+  .list-group-item {
+    grid-template-columns: 10px minmax(0, 1fr) auto;
+    gap: 8px;
+  }
+
+  .task-text {
+    grid-column: 2 / -1;
+  }
+
+  .date {
+    font-size: 12px;
+  }
+
+  .start-date {
+    grid-column: 2;
+    text-align: left;
+  }
+
+  .end-date {
+    grid-column: 3;
+    text-align: right;
+  }
+}
